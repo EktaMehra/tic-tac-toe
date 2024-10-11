@@ -46,3 +46,14 @@ def main():
             display_board(board)
             print("It's a draw!")
             break
+        
+        # Bot's turn
+        bot_move(board)
+        if check_winner(board):
+            display_board(board)
+            print("Bot wins!")
+            break
+        if check_draw(board):
+            display_board(board)
+            print("It's a draw!")
+            break
