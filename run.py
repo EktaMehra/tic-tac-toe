@@ -46,7 +46,7 @@ def main():
             display_board(board)
             print("It's a draw!")
             break
-        
+
         # Bot's turn
         bot_move(board)
         if check_winner(board):
@@ -57,3 +57,18 @@ def main():
             display_board(board)
             print("It's a draw!")
             break
+
+def check_winner(board):
+    """Check rows, columns, and diagonals for a winner."""
+    for row in board: # check rows
+        if row[0] == row[1] == row[2] != " ":
+            return row[]
+    
+    for col in range(3): # check columns
+        if board[0][col] == board[1][col] == board[2][col] != " ":
+            return board[0][col]
+    if board[0][0] == board[1][1] == board[2][2] != " ":  # Check diagonal
+        return board[0][0]
+    if board[0][2] == board[1][1] == board[2][0] != " ":  # Check anti-diagonal
+        return board[0][2]
+    return None  # No winner
