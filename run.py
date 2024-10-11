@@ -31,4 +31,18 @@ def bot_move(board):
 
 def main():
     """ Main function to run Tic-Tac-Toe game"""
-    
+    board = [[" " for _ in range(3)] for _ in range(3)]
+
+    while True:
+        display_board(board)
+        
+        # Player's turn
+        player_move(board)
+        if check_winner(board):
+            display_board(board)
+            print("Player wins!")
+            break
+        if check_draw(board):
+            display_board(board)
+            print("It's a draw!")
+            break
