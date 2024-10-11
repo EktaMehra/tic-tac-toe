@@ -8,7 +8,6 @@ def display_board(board):
 
 def player_move(board):
     """ Get the player's move and update the board"""
-    # player input handling and validation
     while true: 
         try: 
             move = int(input("Enter you move(1-9):"))  -1
@@ -25,8 +24,10 @@ def player_move(board):
 
 def bot_move(board):
     """ Make random move for the bot"""
-    # implimant bot's random move function
-
+    empty_spaces = [(i, j) for i in range(3) for j in range(3) if board[i][j] == " "]
+    if empty_spaces:
+        row, col = random.choice(empty_spaces)
+        board[row][col] = "O"
 
 def main():
     """ Main function to run Tic-Tac-Toe game"""
