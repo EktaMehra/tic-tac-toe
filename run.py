@@ -75,6 +75,12 @@ def check_winner(board):
 
     print("Game over. Thanks for playing!")
 
+    replay = input("Do you want to play again? (yes/no): ").lower()
+    if replay == "yes":
+        main()
+    else:
+        print("Exiting game...")
+
 def check_draw(board):
     """Check if the board is full (draw condition)."""
     return all(cell != " " for row in board for cell in row)
