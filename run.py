@@ -40,7 +40,7 @@ def main():
         player_move(board)
         if check_winner(board):
             display_board(board)
-            print("Player wins!")
+            print("Brilliant, you win!")
             break
         if check_draw(board):
             display_board(board)
@@ -51,7 +51,7 @@ def main():
         bot_move(board)
         if check_winner(board):
             display_board(board)
-            print("Bot wins!")
+            print("uh ho, you lose! Try again?")
             break
         if check_draw(board):
             display_board(board)
@@ -62,7 +62,7 @@ def check_winner(board):
     """Check rows, columns, and diagonals for a winner."""
     for row in board: # check rows
         if row[0] == row[1] == row[2] != " ":
-            return row[]
+            return row[0]
     
     for col in range(3): # check columns
         if board[0][col] == board[1][col] == board[2][col] != " ":
@@ -73,6 +73,9 @@ def check_winner(board):
         return board[0][2]
     return None  # No winner
 
+    print("Game over. Thanks for playing!")
+
 def check_draw(board):
     """Check if the board is full (draw condition)."""
     return all(cell != " " for row in board for cell in row)
+
