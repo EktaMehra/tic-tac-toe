@@ -72,3 +72,7 @@ def check_winner(board):
     if board[0][2] == board[1][1] == board[2][0] != " ":  # Check anti-diagonal
         return board[0][2]
     return None  # No winner
+
+def check_draw(board):
+    """Check if the board is full (draw condition)."""
+    return all(cell != " " for row in board for cell in row)
