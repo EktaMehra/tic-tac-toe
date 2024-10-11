@@ -21,7 +21,6 @@ def player_move(board):
             print("Invalid input! Please enter a number between 1 and 9.")
 
 
-
 def bot_move(board):
     """ Make random move for the bot"""
     empty_spaces = [(i, j) for i in range(3) for j in range(3) if board[i][j] == " "]
@@ -85,3 +84,5 @@ def check_draw(board):
     """Check if the board is full (draw condition)."""
     return all(cell != " " for row in board for cell in row)
 
+if __name__ == "__main__":
+    main()
