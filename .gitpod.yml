@@ -12,3 +12,5 @@ vscode:
     - hookyqr.beautify
     - matt-rudge.auto-open-preview-panel
 
+
+    - ms-python.debugpy

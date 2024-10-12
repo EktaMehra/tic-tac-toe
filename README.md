@@ -49,4 +49,4 @@ Future plans include adding unit tests to verify the correctness of key function
 To be filled in......
 ## Credits
 1. Game Inspiration: The classic game of Tic-Tac-Toe.
-2. Reference Repository: ImKennyYip's Tic-Tac-Toe Python provided inspiration for structuring the project and implementing core features.
+2. Reference Repository: ImKennyYip's Tic-Tac-Toe Python[https://github.com/ImKennyYip/tictactoe-python] provided inspiration for structuring the project and implementing core features.
