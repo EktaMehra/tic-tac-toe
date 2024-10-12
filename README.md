@@ -46,6 +46,8 @@ Future plans include adding unit tests to verify the correctness of key function
 ### Fixed Bugs:
 1. Fixed an issue where the player’s symbol wasn't being assigned correctly on the board due to the use of comparison (==) instead of assignment (=).
 2. Addressed an issue where the game would fail to prompt the player again after an invalid input.
+## Validator Testing
+PEP8 : No errors were returned from [PEP8online.com](https://pep8ci.herokuapp.com/)
 ## Deployment
 This project was deployed using Code Institute's mock terminal for Heroku and some [Google](www.google.com) research:
 - Add a line "worker: python tictactoe.py" to Procfile
