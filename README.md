@@ -1,6 +1,7 @@
 # Tic-Tac-Toe Game
 ## Introduction
 This is a simple Python implementation of the classic Tic-Tac-Toe game. The game can be played between a human player (Player X) and a bot (Player O). The goal is to align three of your symbols (X or O) in a row, column, or diagonal on a 3x3 grid. The game ends when a player wins or when the grid is completely filled (resulting in a draw).
+![Responsive screen image](assets/tictactoe%20responsive%20screen.PNG)
 
 ## How to Play
 The game is played on a 3x3 grid, initially empty.
@@ -46,7 +47,8 @@ Future plans include adding unit tests to verify the correctness of key function
 1. Fixed an issue where the player’s symbol wasn't being assigned correctly on the board due to the use of comparison (==) instead of assignment (=).
 2. Addressed an issue where the game would fail to prompt the player again after an invalid input.
 ## Deployment
-To be filled in......
+This project was deployed using Code Institute's mock terminal for Heroku and some Google[www.google.com] research
+
 ## Credits
 1. Game Inspiration: The classic game of Tic-Tac-Toe.
 2. Reference Repository: ImKennyYip's Tic-Tac-Toe Python[https://github.com/ImKennyYip/tictactoe-python] provided inspiration for structuring the project and implementing core features.
