@@ -1,21 +1,31 @@
 # Tic-Tac-Toe Game
+Play the [Tic-Tac-Toe Game](https://tictactoe-em-45ad1fa00a31.herokuapp.com/) here.
 ## Introduction
 This is a simple Python implementation of the classic Tic-Tac-Toe game. The game can be played between a human player (Player X) and a bot (Player O). The goal is to align three of your symbols (X or O) in a row, column, or diagonal on a 3x3 grid. The game ends when a player wins or when the grid is completely filled (resulting in a draw).
 ![Responsive screen image](assets/tictactoe%20responsive%20screen.PNG)
 
 ## How to Play
-The game is played on a 3x3 grid, initially empty.
-The player will be prompted to enter their move by selecting a number between 1 and 9, which corresponds to a position on the grid.
-The bot will then make its move, selecting a random empty space.
-The game alternates between the player and the bot until either:
-A player wins by getting three of their symbols in a row (horizontal, vertical, or diagonal).
-The board is filled and results in a draw.
-At the end of the game, the winner or the draw status will be announced, and the player can choose to play again or exit the game.
+- The game is played on a 3x3 grid, initially empty.
+- The player will be prompted to select their symbol, "X" or "O".
+- They enter their move by selecting a number between 1 and 9, which corresponds to a position on the grid.
+- The bot will then make its move, selecting a random empty space.
+- The game alternates between the player and the bot until either: the player wins by getting three of their symbols in a row (horizontal, vertical, or diagonal) or the board is filled and results in a draw.
+- At the end of the game, the winner or the draw status will be announced, and the player can choose to play again or exit the game.
+
+## Planning
+The planning draft of the game's structure.
+![Planning flowchart of the game](assets/tictactoe%20planning.PNG)
+
 ## Features
 ### Existing Features:
 1. Player vs Bot: The player plays against a basic bot that randomly selects available moves.
-2. Winner and Draw Detection: The game checks for both winning and draw conditions after every move.
-3. Replay Option: After the game ends, the player can choose to play again or exit.
+2. Symbol Selection: The player can pick if they want to play as "X" or "O".
+![tictactoe start](assets/tictactoe%20game0.PNG)
+3. Winner and Draw Detection: The game checks for both winning and draw conditions after every move.
+4. Replay Option: After the game ends, the player can choose to play again or exit.
+5. Colorama: Added this feature to make the board more attractive and accessible
+![tictactoe color theme](assets/tictactoe%20game1.PNG)
+
 ### Future Features:
 1. Improved AI: Implementing a smarter bot using the minimax algorithm to challenge the player more effectively.
 2. Multiplayer Mode: Allow two human players to play against each other.
@@ -47,7 +57,7 @@ Future plans include adding unit tests to verify the correctness of key function
 1. Fixed an issue where the player’s symbol wasn't being assigned correctly on the board due to the use of comparison (==) instead of assignment (=).
 2. Addressed an issue where the game would fail to prompt the player again after an invalid input.
 ## Validator Testing
-PEP8 : No errors were returned from [PEP8online.com](https://pep8ci.herokuapp.com/)
+PEP8 : No errors were returned from [PEP8ci.herokuapp.com](https://pep8ci.herokuapp.com/)
 ## Deployment
 This project was deployed using Code Institute's mock terminal for Heroku and some [Google](www.google.com) research:
 - Add a line "worker: python tictactoe.py" to Procfile
