@@ -1,7 +1,7 @@
 import random
 import os
 import colorama
-from colorama import Fore, Style
+from colorama import Fore, Back, Style
 
 # Initialize Colorama for cross-platform color support
 colorama.init(autoreset=True)
@@ -21,13 +21,13 @@ class Game:
             print("-" * 11)
 
     def get_colored_cell(self, cell):
-        """ Return the cell with appropriate color based on its value """
+        """ Return the cell with appropriate color and white background """
         if cell == "X":
-            return Back.WHITE + Fore.CYAN + cell + Style.RESET_ALL  # Cyan for X
+            return Back.WHITE + Fore.CYAN + cell + Style.RESET_ALL  # Cyan X with white background
         elif cell == "O":
-            return Back.WHITE + Fore.RED + cell + Style.RESET_ALL  # Red for O
+            return Back.WHITE + Fore.RED + cell + Style.RESET_ALL  # Red O with white background
         return Back.WHITE + cell + Style.RESET_ALL  # Empty spaces with white background
-        
+
     def player_move(self):
         """ Get the player's move and update the board """
         while True:
