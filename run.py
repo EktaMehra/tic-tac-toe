@@ -5,7 +5,7 @@ def display_board(board):
     """ Display current game board """
     for row in board:
         print(f' {" | ".join(row)} ')
-        print("-" * 5)
+        print("-" * 11)
 
 def player_move(board):
     """ Get the player's move and update the board """
