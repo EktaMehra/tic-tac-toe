@@ -23,11 +23,11 @@ class Game:
     def get_colored_cell(self, cell):
         """ Return the cell with appropriate color based on its value """
         if cell == "X":
-            return Fore.CYAN + cell + Style.RESET_ALL  # Cyan for X
+            return Back.WHITE + Fore.CYAN + cell + Style.RESET_ALL  # Cyan for X
         elif cell == "O":
-            return Fore.RED + cell + Style.RESET_ALL  # Red for O
-        return cell  # Empty spaces stay white
-
+            return Back.WHITE + Fore.RED + cell + Style.RESET_ALL  # Red for O
+        return Back.WHITE + cell + Style.RESET_ALL  # Empty spaces with white background
+        
     def player_move(self):
         """ Get the player's move and update the board """
         while True:
