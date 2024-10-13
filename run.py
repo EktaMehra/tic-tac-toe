@@ -14,19 +14,28 @@ class Game:
         self.bot_symbol = ""
 
     def display_board(self):
-        """ Display current game board """
+        """ Display the current game board with color formatting """
         for row in self.board:
-            print(f' {" | ".join(row)} ')
+            colored_row = [self.get_colored_cell(cell) for cell in row]
+            print(f' {colored_row[0]} | {colored_row[1]} | {colored_row[2]} ')
             print("-" * 11)
+
+    def get_colored_cell(self, cell):
+        """ Return the cell with appropriate color based on its value """
+        if cell == "X":
+            return Fore.CYAN + cell + Style.RESET_ALL  # Cyan for X
+        elif cell == "O":
+            return Fore.RED + cell + Style.RESET_ALL  # Red for O
+        return cell  # Empty spaces stay white
 
     def player_move(self):
         """ Get the player's move and update the board """
-        while True:  # Fixed: "True" should be capitalized
-            try: 
-                move = int(input("Enter your move (1-9): ")) - 1
+        while True:
+            try:
+                move = int(input(f"Enter your move (1-9), {self.player_symbol}: ")) - 1
                 row, col = divmod(move, 3)
                 if self.board[row][col] == " ":
-                    self.board[row][col] = "X"  # Fixed: use "=" for assignment
+                    self.board[row][col] = self.player_symbol
                     break
                 else:
                     print("Invalid move! Space is already taken.")
@@ -34,19 +43,19 @@ class Game:
                 print("Invalid input! Please enter a number between 1 and 9.")
 
     def bot_move(self):
-        """ Make random move for the bot """
+        """ Make a random move for the bot """
         empty_spaces = [(i, j) for i in range(3) for j in range(3) if self.board[i][j] == " "]
         if empty_spaces:
             row, col = random.choice(empty_spaces)
-            self.board[row][col] = "O"
+            self.board[row][col] = self.bot_symbol
 
     def check_winner(self):
-        """ Check rows, columns, and diagonals for a winner. """
+        """ Check rows, columns, and diagonals for a winner """
         # Check rows
         for row in self.board:
             if row[0] == row[1] == row[2] != " ":
                 return row[0]
-        
+
         # Check columns
         for col in range(3):
             if self.board[0][col] == self.board[1][col] == self.board[2][col] != " ":
@@ -61,45 +70,61 @@ class Game:
         return None  # No winner
 
     def check_draw(self):
-        """ Check if the board is full (draw condition). """
+        """ Check if the board is full (draw condition) """
         return all(cell != " " for row in self.board for cell in row)
-    
+
+    def choose_symbol(self):
+        """ Let the player choose whether they want to play as 'X' or 'O' """
+        while True:
+            choice = input("Do you want to be 'X' or 'O'? ").upper()
+            if choice in ["X", "O"]:
+                self.player_symbol = choice
+                self.bot_symbol = "O" if choice == "X" else "X"
+                break
+            else:
+                print("Invalid choice. Please choose 'X' or 'O'.")
+
     def clear_terminal(self):
         """ Clear the terminal screen (works for both Windows and Unix-based systems) """
         os.system('cls' if os.name == 'nt' else 'clear')
 
-
 def main():
     """ Main function to run the Tic-Tac-Toe game """
-    board = [[" " for _ in range(3)] for _ in range(3)]
+    game = Game()
+    game.choose_symbol()
 
     while True:
-        display_board(board)
-        
+        game.clear_terminal()  # Clear the screen before displaying the board
+        game.display_board()
+
         # Player's turn
-        player_move(board)
-        if check_winner(board):
-            display_board(board)
-            print("Brilliant, you win!")
+        game.player_move()
+        if game.check_winner():
+            game.clear_terminal()
+            game.display_board()
+            print(f"Brilliant, {game.player_symbol} wins!")
             break
-        if check_draw(board):
-            display_board(board)
+        if game.check_draw():
+            game.clear_terminal()
+            game.display_board()
             print("It's a draw!")
             break
 
         # Bot's turn
-        bot_move(board)
-        if check_winner(board):
-            display_board(board)
-            print("Uh oh, you lose! Try again?")
+        game.bot_move()
+        if game.check_winner():
+            game.clear_terminal()
+            game.display_board()
+            print(f"Uh oh, {game.bot_symbol} wins! Try again?")
             break
-        if check_draw(board):
-            display_board(board)
+        if game.check_draw():
+            game.clear_terminal()
+            game.display_board()
             print("It's a draw!")
             break
 
     print("Game over. Thanks for playing!")
-    
+
     replay = input("Do you want to play again? (yes/no): ").lower()
     if replay == "yes":
         main()
