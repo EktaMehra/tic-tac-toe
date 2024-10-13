@@ -1,5 +1,11 @@
 import random
+import os
 import colorama
+from colorama import Fore, Style
+
+# Initialize Colorama for cross-platform color support
+colorama.init(autoreset=True)
+
 
 def display_board(board):
     """ Display current game board """
