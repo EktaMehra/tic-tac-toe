@@ -63,6 +63,11 @@ class Game:
     def check_draw(self):
         """ Check if the board is full (draw condition). """
         return all(cell != " " for row in self.board for cell in row)
+    
+    def clear_terminal(self):
+        """ Clear the terminal screen (works for both Windows and Unix-based systems) """
+        os.system('cls' if os.name == 'nt' else 'clear')
+
 
 def main():
     """ Main function to run the Tic-Tac-Toe game """
