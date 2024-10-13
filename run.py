@@ -1,9 +1,10 @@
 import random
+import colorama
 
 def display_board(board):
     """ Display current game board """
     for row in board:
-        print(" | ".join(row))
+        print(f' {" | ".join(row)} ')
         print("-" * 5)
 
 def player_move(board):
