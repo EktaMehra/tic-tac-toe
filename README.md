@@ -19,11 +19,12 @@ The planning draft of the game's structure.
 ## Features
 ### Existing Features:
 1. Player vs Bot: The player plays against a basic bot that randomly selects available moves.
-2. Symbol Selection: The player can pick if they want to play as "X" or "O".
+2. Player Move: Players can now choose whether to play as X or O before the game begins.The game will prompt the player to select their symbol, and the computer will automatically be assigned the other symbol. Players input a number between 1 and 9 to make their move, representing positions on the 3x3 grid. The game will validate the move to ensure the chosen position is empty. Invalid moves will prompt the player to enter a valid number.
+3. Symbol Selection: The player can pick if they want to play as "X" or "O".
 ![tictactoe start](assets/tictactoe%20game0.PNG)
-3. Winner and Draw Detection: The game checks for both winning and draw conditions after every move.
-4. Replay Option: After the game ends, the player can choose to play again or exit.
-5. Colorama: Added this feature to make the board more attractive and accessible
+4. Winner and Draw Detection: The game checks for both winning and draw conditions after every move.
+5. Replay Option: After the game ends, the player can choose to play again or exit.
+6. Colorama: Added this feature to make the board more attractive and accessible
 ![tictactoe color theme](assets/tictactoe%20game1.PNG)
 
 ### Future Features:
