@@ -15,10 +15,12 @@ class Game:
 
     def display_board(self):
         """ Display the current game board with color formatting """
+        print(f"") # Add space at top of the game board to make it look better
         for row in self.board:
             colored_row = [self.get_colored_cell(cell) for cell in row]
-            print(f' {colored_row[0]} | {colored_row[1]} | {colored_row[2]} ')
-            print("-" * 11)
+            print(f' | {colored_row[0]} | {colored_row[1]} | {colored_row[2]} | ')
+            print("-" * 15)
+        print(f"") # Add space at the bottom of the game board to make it look better
 
     def get_colored_cell(self, cell):
         """ Return the cell with appropriate color based on its value """

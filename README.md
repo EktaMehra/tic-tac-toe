@@ -1,7 +1,7 @@
 # Tic-Tac-Toe Game
 Play the [Tic-Tac-Toe Game](https://tictactoe-em-45ad1fa00a31.herokuapp.com/) here.
 ## Introduction
-This is a simple Python implementation of the classic Tic-Tac-Toe game. The game can be played between a human player (Player X) and a bot (Player O). The goal is to align three of your symbols (X or O) in a row, column, or diagonal on a 3x3 grid. The game ends when a player wins or when the grid is completely filled (resulting in a draw).
+This is a simple Python implementation of the classic Tic-Tac-Toe game. The game is played between a human player and a bot. The goal is to align three of your symbols (X or O) in a row, column, or diagonal on a 3x3 grid. The game ends when a player wins or when the grid is completely filled (resulting in a draw).
 ![Responsive screen image](assets/tictactoe%20responsive%20screen.PNG)
 
 ## How to Play
